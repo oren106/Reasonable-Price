@@ -10,6 +10,36 @@
 <body onload="visible();">
 
     <form id="form1" runat="server">
+    <script language = "javascript" type="text/javascript">
+        
+       function vald() {
+            //var patt = "[0-9].*";
+            var reg = new RegExp("^[0-9]+$");
+            var check = true;
+            var value = document.getElementById("<%=TextPrice.ClientID %>").value;
+           if(reg.test(value.toString()) == false){
+           alert("Price can only be numircal");
+            document.getElementById("<%=TextPrice.ClientID %>").focus();
+            return false;
+           }
+           var val = document.getElementById("<%=TextAmount.ClientID %>").value;
+
+           if(reg.test(val.toString()) == false){
+           alert("Amount can only be numircal");
+            document.getElementById("<%=TextAmount.ClientID %>").focus();
+            return false;
+           }
+
+           return true;
+           }
+            
+                            
+                                         
+       
+          
+           
+        
+    </script>
     <div align="center">
 
         
@@ -27,7 +57,7 @@
         <br />
         <br />    
         <br />
-        <asp:TextBox ID="TextAmount" runat="server">Amount</asp:TextBox>
+        <asp:TextBox ID="TextAmount" runat="server" Text = "Amount"></asp:TextBox>
 &nbsp;&nbsp;<asp:DropDownList ID="DropDownMessurment" runat="server">
         <asp:ListItem Value ="1" Text = "Kg"/>
         <asp:ListItem Value ="2" text = "gr" />
@@ -42,7 +72,7 @@
         <br />
         <br />
     
-        <asp:Button ID="send" runat="server" Text="Send" onclick="send_Click" />
+        <asp:Button ID="send" runat="server" Text="Send" OnClientClick = "return vald();" OnClick = "send_Click"/>
     
         <br />
         <br />
