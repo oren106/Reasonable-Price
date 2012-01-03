@@ -7,20 +7,15 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 
-    public partial class _Default : System.Web.UI.Page
+public partial class _Answer : System.Web.UI.Page
     {
         // what to do when the page loads
         protected void Page_Load(object sender, EventArgs e)
         {
             int num;
             string text = Request.QueryString.ToString();
-            try{
             num = Convert.ToInt32(text);
-            }
-            catch (FormatException t)
-            {
-                num = -1;
-            }
+            
             switch (num)
             {
                 case 1:
@@ -48,10 +43,10 @@ using System.Web.UI.WebControls;
                     Image1.ImageUrl = "images/arrow8.jpg";
                     break;
                 default:
-                    TextBox1.Text = text;
+                    //Image1.ImageUrl = "images/arrow8.jpg";
                     break;
             }
-        }
+}
         protected void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
