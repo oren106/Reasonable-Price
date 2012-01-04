@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data;
-using System.Data.SqlClient;
 using System.Text;
-
+using System.Data.SQLite;
 
 
 
@@ -45,17 +44,18 @@ public class prodInfo
     }
     public int save()
     {
-        SqlConnection cs;
-        SqlDataAdapter ad;
+        SQLiteConnection cs;
+        SQLiteDataAdapter ad;
         basicConnection(out cs, out ad);
-        ad.InsertCommand = new SqlCommand("INSERT INTO raw VALUES(@name, @place,@city,@price,@amount,@currency,@messurmant)", cs);
-        ad.InsertCommand.Parameters.Add("@name", SqlDbType.VarChar).Value = get_name();
-        ad.InsertCommand.Parameters.Add("@price", SqlDbType.Int).Value = get_price();
-        ad.InsertCommand.Parameters.Add("@place", SqlDbType.VarChar).Value = get_place();
-        ad.InsertCommand.Parameters.Add("@city", SqlDbType.VarChar).Value = get_city();
-        ad.InsertCommand.Parameters.Add("@amount", SqlDbType.Int).Value = get_amount();
-        ad.InsertCommand.Parameters.Add("@currency", SqlDbType.Int).Value = get_currency();
-        ad.InsertCommand.Parameters.Add("@messurmant", SqlDbType.Int).Value = get_messurment();
+        ad.InsertCommand = new SQLiteCommand("INSERT INTO \"raw\" (name,place,city,price,amount,currency,messurmant) "+
+                                                                 " VALUES ('"+get_name() + 
+                                                                        "', '"+get_place() + 
+                                                                        "', '"+get_city() + 
+                                                                        "', "+get_price() + 
+                                                                        ", "+get_amount() + 
+                                                                        ", "+get_currency() + 
+                                                                        ", "+get_messurment()+
+                                                                        ");", cs);
         cs.Open();
         ad.InsertCommand.ExecuteNonQuery();
         cs.Close();
@@ -75,19 +75,22 @@ public class prodInfo
     public int calculate()
     {
         int i = 0;
-        SqlConnection cs= new SqlConnection("Data Source=JOW-E76F4B0F945;Initial Catalog=dbrps;Integrated Security=True;Pooling=False");
+        SQLiteConnection cs= new SQLiteConnection("data source=C:\\Documents and Settings\\user\\My Documents\\Visual Studio 2010\\WebSites\\RPS1\\rpsDB");
         string queryString = "SELECT * FROM raw WHERE (name = '" + get_name() + "')";
-        SqlCommand command = new SqlCommand(queryString, cs);
+        SQLiteCommand command = new SQLiteCommand(queryString, cs);
         cs.Open();
-        SqlDataReader reader = command.ExecuteReader();
-        double a, b;
+        SQLiteDataReader reader = command.ExecuteReader();
+        if (reader.FieldCount == 0)
+            return 0;
+        double a=0, b=0;
         b = (get_price() * get_currency()) / (get_amount() * forCalc(get_messurment())); 
         try
         {
             while (reader.Read())
             {
-                a = (((int)reader[5] * (int)reader[7]) / ((int)reader[6] * forCalc((int)reader[8])));
-                if (a < b)
+                //a = (((int)reader[5] * (int)reader[7]) / ((int)reader[6] * forCalc((int)reader[8])));
+                i =  RandomNumber(-100000,100000);
+                if (a > b)
                     i++;
                 else
                     i--;
@@ -95,17 +98,20 @@ public class prodInfo
         }
         finally
         {
-            // Always call Close when done reading.
             cs.Close();
         }
 
         return i;
     }
-
-    private static void basicConnection(out SqlConnection cs, out SqlDataAdapter ad)
+    private int RandomNumber(int min, int max)
     {
-        cs = new SqlConnection("Data Source=JOW-E76F4B0F945;Initial Catalog=dbrps;Integrated Security=True;Pooling=False");
-        ad = new SqlDataAdapter();
+        Random random = new Random();
+        return random.Next(min, max);
+    }
+    private static void basicConnection(out SQLiteConnection cs, out SQLiteDataAdapter ad)
+    {
+        cs = new SQLiteConnection("data source=C:\\Documents and Settings\\user\\My Documents\\Visual Studio 2010\\WebSites\\RPS1\\rpsDB");
+        ad = new SQLiteDataAdapter();
     }
 
 

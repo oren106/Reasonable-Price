@@ -10,13 +10,17 @@ using System.Web.UI.WebControls;
         private prodInfo product;
         private Interpartor inter;
         protected string text;
-        
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            
+        }
         //what to do when the user clicks the ask button 
         protected void send_Click(object sender, EventArgs e)
         {
 
             product = new prodInfo(TextName.Text, TextPlace.Text, TextCity.Text, Convert.ToInt32(TextPrice.Text), Convert.ToInt16(DropDownCurrncy.SelectedValue), Convert.ToInt16(DropDownMessurment.SelectedValue), Convert.ToInt32(TextAmount.Text));
+            product.save();
             inter = new Interpartor(product);
-            Response.Redirect("Answer.aspx?" + inter.getAns().ToString());
+            Response.Redirect("Answer.aspx?" + inter.getAns());
         }
 }
