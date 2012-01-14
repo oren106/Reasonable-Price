@@ -24,6 +24,11 @@ public class Interpartor
        
         return product.calculate();
     }
+    public string normal ()
+    {
+
+        return product.toString();
+    }
 
     
 

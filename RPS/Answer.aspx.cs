@@ -7,7 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 
-public partial class _Default : System.Web.UI.Page
+public partial class Answer : System.Web.UI.Page
 {
     // what to do when the page loads
     protected void Page_Load(object sender, EventArgs e)

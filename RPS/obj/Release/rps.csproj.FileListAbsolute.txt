@@ -10,6 +10,7 @@ C:\Documents and Settings\Little Jow\My Documents\Visual Studio 2010\Projects\RP
 C:\Documents and Settings\Little Jow\My Documents\Visual Studio 2010\Projects\RPS2\rps\obj\Release\rps.pdb
 C:\rps\bin\rps.dll
 C:\rps\bin\rps.pdb
+C:\rps\bin\nunit.framework.dll
 C:\rps\bin\nunit.framework.xml
 C:\rps\obj\Release\ResolveAssemblyReference.cache
 C:\rps\obj\Release\rps.Properties.Resources.resources
@@ -17,12 +18,13 @@ C:\rps\obj\Release\GenerateResource.read.1.tlog
 C:\rps\obj\Release\GenerateResource.write.1.tlog
 C:\rps\obj\Release\rps.dll
 C:\rps\obj\Release\rps.pdb
-C:\rps_test\bin\rps.dll
-C:\rps_test\bin\rps.pdb
-C:\rps_test\bin\nunit.framework.xml
-C:\rps_test\obj\Release\ResolveAssemblyReference.cache
-C:\rps_test\obj\Release\rps.Properties.Resources.resources
-C:\rps_test\obj\Release\GenerateResource.read.1.tlog
-C:\rps_test\obj\Release\GenerateResource.write.1.tlog
-C:\rps_test\obj\Release\rps.dll
-C:\rps_test\obj\Release\rps.pdb
+C:\rps5\obj\Release\ResolveAssemblyReference.cache
+C:\rps5\obj\Release\rps.Properties.Resources.resources
+C:\rps5\obj\Release\GenerateResource.read.1.tlog
+C:\rps5\obj\Release\GenerateResource.write.1.tlog
+C:\rps5\bin\rps.dll
+C:\rps5\bin\rps.pdb
+C:\rps5\bin\nunit.framework.dll
+C:\rps5\bin\nunit.framework.xml
+C:\rps5\obj\Release\rps.dll
+C:\rps5\obj\Release\rps.pdb

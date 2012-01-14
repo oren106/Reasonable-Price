@@ -31,7 +31,7 @@
     <div align="center">
         <h1>
             RPS</h1>
-        <img alt="" src="images/logo.jpg" style="height: 79px; width: 103px" />
+        <img alt="" src="images\logo.jpg" style="height: 79px; width: 103px" />
         <h3>
             Reasonable Price System</h3>
         <br />

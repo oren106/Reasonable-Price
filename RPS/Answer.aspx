@@ -10,11 +10,11 @@
     <form id="form1" runat="server">
     <div align="center">
         <h1>RPS</h1>
-            <img alt="" src="images/logo.jpg" style="height: 79px; width: 103px" />
+            <img alt="" src="images\logo.jpg" style="height: 79px; width: 103px" />
         <h3>Reasonable Price System</h3>
         <asp:Label ID="answer" runat="server" Text="Label"></asp:Label>
         <br />
-        <img alt="" src="images/sacle.jpg" 
+        <img alt="" src="images\sacle.jpg" 
             style="width: 358px; height: 120px; margin-top: 0px;" /><br />
         <asp:Image ID="Image1" runat="server"  style="width: 358px; height: 120px; margin-top: 0px;" />
     </div>

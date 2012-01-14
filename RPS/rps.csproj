@@ -13,7 +13,6 @@
     <RootNamespace>rps</RootNamespace>
     <AssemblyName>rps</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -66,35 +65,19 @@
     <Compile Include="Answer.aspx.designer.cs">
       <DependentUpon>Answer.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\Interpartor.cs" />
     <Compile Include="Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Old_App_Code\DBM.cs" />
-    <Compile Include="Old_App_Code\DBMInterface.cs" />
-    <Compile Include="Old_App_Code\ProdInterface.cs" />
+    <Compile Include="App_Code\prodInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Content Include="Account\ChangePassword.aspx" />
-    <Content Include="Account\ChangePasswordSuccess.aspx" />
-    <Compile Include="Account\ChangePassword.aspx.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\ChangePassword.aspx.designer.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
-      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
-      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
-    </Compile>
+    <Content Include="App_Data\System.Data.SQLite.dll" />
     <Content Include="Answer.aspx" />
-    <Content Include="default.aspx" />
+    <Content Include="Properties\Global.asax" />
     <Content Include="images\arrow1.jpg" />
     <Content Include="images\arrow2.jpg" />
     <Content Include="images\arrow3.jpg" />
@@ -107,298 +90,39 @@
     <Content Include="images\sacle.jpg" />
     <Content Include="Main.aspx" />
     <Content Include="obj\Debug\rps.csproj.FileListAbsolute.txt" />
-    <Content Include="Site.css" />
     <Compile Include="Answer.aspx.cs">
       <DependentUpon>Answer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Old_App_Code\Interpartor.cs" />
-    <Compile Include="Old_App_Code\prodInfo.cs" />
     <Compile Include="Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Content Include="Styles\Site.css" />
-    <Content Include="web.config" />
-    <Content Include="Web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
-    </Content>
-    <Content Include="DynamicData\web.config" />
-    <Content Include="DynamicData\Content\GridViewPager.ascx" />
-    <Compile Include="DynamicData\Content\GridViewPager.ascx.cs">
-      <DependentUpon>GridViewPager.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\Content\GridViewPager.ascx.designer.cs">
-      <DependentUpon>GridViewPager.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\Content\Images\Back.gif" />
-    <Content Include="DynamicData\Content\Images\header_back.gif" />
-    <Content Include="DynamicData\Content\Images\PgFirst.gif" />
-    <Content Include="DynamicData\Content\Images\PgLast.gif" />
-    <Content Include="DynamicData\Content\Images\PgNext.gif" />
-    <Content Include="DynamicData\Content\Images\PgPrev.gif" />
-    <Content Include="DynamicData\Content\Images\plus.gif" />
-    <Content Include="DynamicData\EntityTemplates\Default.ascx" />
-    <Compile Include="DynamicData\EntityTemplates\Default.ascx.cs">
-      <DependentUpon>Default.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\EntityTemplates\Default.ascx.designer.cs">
-      <DependentUpon>Default.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\EntityTemplates\Default_Edit.ascx" />
-    <Compile Include="DynamicData\EntityTemplates\Default_Edit.ascx.cs">
-      <DependentUpon>Default_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\EntityTemplates\Default_Edit.ascx.designer.cs">
-      <DependentUpon>Default_Edit.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\EntityTemplates\Default_Insert.ascx" />
-    <Compile Include="DynamicData\EntityTemplates\Default_Insert.ascx.cs">
-      <DependentUpon>Default_Insert.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\EntityTemplates\Default_Insert.ascx.designer.cs">
-      <DependentUpon>Default_Insert.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\FieldTemplates\Boolean.ascx" />
-    <Compile Include="DynamicData\FieldTemplates\Boolean.ascx.cs">
-      <DependentUpon>Boolean.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Boolean.ascx.designer.cs">
-      <DependentUpon>Boolean.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\FieldTemplates\Boolean_Edit.ascx" />
-    <Compile Include="DynamicData\FieldTemplates\Boolean_Edit.ascx.cs">
-      <DependentUpon>Boolean_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Boolean_Edit.ascx.designer.cs">
-      <DependentUpon>Boolean_Edit.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\FieldTemplates\Children.ascx" />
-    <Compile Include="DynamicData\FieldTemplates\Children.ascx.cs">
-      <DependentUpon>Children.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Children.ascx.designer.cs">
-      <DependentUpon>Children.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\FieldTemplates\Children_Insert.ascx" />
-    <Compile Include="DynamicData\FieldTemplates\Children_Insert.ascx.cs">
-      <DependentUpon>Children_Insert.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Children_Insert.ascx.designer.cs">
-      <DependentUpon>Children_Insert.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\FieldTemplates\DateTime.ascx" />
-    <Compile Include="DynamicData\FieldTemplates\DateTime.ascx.cs">
-      <DependentUpon>DateTime.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\DateTime.ascx.designer.cs">
-      <DependentUpon>DateTime.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\FieldTemplates\DateTime_Edit.ascx" />
-    <Compile Include="DynamicData\FieldTemplates\DateTime_Edit.ascx.cs">
-      <DependentUpon>DateTime_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\DateTime_Edit.ascx.designer.cs">
-      <DependentUpon>DateTime_Edit.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\FieldTemplates\Decimal_Edit.ascx" />
-    <Compile Include="DynamicData\FieldTemplates\Decimal_Edit.ascx.cs">
-      <DependentUpon>Decimal_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Decimal_Edit.ascx.designer.cs">
-      <DependentUpon>Decimal_Edit.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\FieldTemplates\EmailAddress.ascx" />
-    <Compile Include="DynamicData\FieldTemplates\EmailAddress.ascx.cs">
-      <DependentUpon>EmailAddress.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\EmailAddress.ascx.designer.cs">
-      <DependentUpon>EmailAddress.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\FieldTemplates\Enumeration.ascx" />
-    <Compile Include="DynamicData\FieldTemplates\Enumeration.ascx.cs">
-      <DependentUpon>Enumeration.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Enumeration.ascx.designer.cs">
-      <DependentUpon>Enumeration.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx" />
-    <Compile Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx.cs">
-      <DependentUpon>Enumeration_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx.designer.cs">
-      <DependentUpon>Enumeration_Edit.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\FieldTemplates\ForeignKey.ascx" />
-    <Compile Include="DynamicData\FieldTemplates\ForeignKey.ascx.cs">
-      <DependentUpon>ForeignKey.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\ForeignKey.ascx.designer.cs">
-      <DependentUpon>ForeignKey.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx" />
-    <Compile Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx.cs">
-      <DependentUpon>ForeignKey_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx.designer.cs">
-      <DependentUpon>ForeignKey_Edit.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\FieldTemplates\Integer_Edit.ascx" />
-    <Compile Include="DynamicData\FieldTemplates\Integer_Edit.ascx.cs">
-      <DependentUpon>Integer_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Integer_Edit.ascx.designer.cs">
-      <DependentUpon>Integer_Edit.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\FieldTemplates\ManyToMany.ascx" />
-    <Compile Include="DynamicData\FieldTemplates\ManyToMany.ascx.cs">
-      <DependentUpon>ManyToMany.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\ManyToMany.ascx.designer.cs">
-      <DependentUpon>ManyToMany.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\FieldTemplates\ManyToMany_Edit.ascx" />
-    <Compile Include="DynamicData\FieldTemplates\ManyToMany_Edit.ascx.cs">
-      <DependentUpon>ManyToMany_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\ManyToMany_Edit.ascx.designer.cs">
-      <DependentUpon>ManyToMany_Edit.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx" />
-    <Compile Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx.cs">
-      <DependentUpon>MultilineText_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx.designer.cs">
-      <DependentUpon>MultilineText_Edit.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\FieldTemplates\Text.ascx" />
-    <Compile Include="DynamicData\FieldTemplates\Text.ascx.cs">
-      <DependentUpon>Text.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Text.ascx.designer.cs">
-      <DependentUpon>Text.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\FieldTemplates\Text_Edit.ascx" />
-    <Compile Include="DynamicData\FieldTemplates\Text_Edit.ascx.cs">
-      <DependentUpon>Text_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Text_Edit.ascx.designer.cs">
-      <DependentUpon>Text_Edit.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\FieldTemplates\Url.ascx" />
-    <Compile Include="DynamicData\FieldTemplates\Url.ascx.cs">
-      <DependentUpon>Url.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Url.ascx.designer.cs">
-      <DependentUpon>Url.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\Filters\Boolean.ascx" />
-    <Compile Include="DynamicData\Filters\Boolean.ascx.cs">
-      <DependentUpon>Boolean.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\Filters\Boolean.ascx.designer.cs">
-      <DependentUpon>Boolean.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\Filters\Enumeration.ascx" />
-    <Compile Include="DynamicData\Filters\Enumeration.ascx.cs">
-      <DependentUpon>Enumeration.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\Filters\Enumeration.ascx.designer.cs">
-      <DependentUpon>Enumeration.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\Filters\ForeignKey.ascx" />
-    <Compile Include="DynamicData\Filters\ForeignKey.ascx.cs">
-      <DependentUpon>ForeignKey.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\Filters\ForeignKey.ascx.designer.cs">
-      <DependentUpon>ForeignKey.ascx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\PageTemplates\Details.aspx" />
-    <Compile Include="DynamicData\PageTemplates\Details.aspx.cs">
-      <DependentUpon>Details.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\PageTemplates\Details.aspx.designer.cs">
-      <DependentUpon>Details.aspx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\PageTemplates\Edit.aspx" />
-    <Compile Include="DynamicData\PageTemplates\Edit.aspx.cs">
-      <DependentUpon>Edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\PageTemplates\Edit.aspx.designer.cs">
-      <DependentUpon>Edit.aspx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\PageTemplates\Insert.aspx" />
-    <Compile Include="DynamicData\PageTemplates\Insert.aspx.cs">
-      <DependentUpon>Insert.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\PageTemplates\Insert.aspx.designer.cs">
-      <DependentUpon>Insert.aspx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\PageTemplates\List.aspx" />
-    <Compile Include="DynamicData\PageTemplates\List.aspx.cs">
-      <DependentUpon>List.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\PageTemplates\List.aspx.designer.cs">
-      <DependentUpon>List.aspx</DependentUpon>
-    </Compile>
-    <Content Include="DynamicData\PageTemplates\ListDetails.aspx" />
-    <Compile Include="DynamicData\PageTemplates\ListDetails.aspx.cs">
-      <DependentUpon>ListDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\PageTemplates\ListDetails.aspx.designer.cs">
-      <DependentUpon>ListDetails.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
     </Compile>
-    <Content Include="Styles\Scripts\jquery-1.4.1-vsdoc.js" />
-    <Content Include="Styles\Scripts\jquery-1.4.1.js" />
-    <Content Include="Styles\Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Properties\web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="bin\" />
-    <Folder Include="DynamicData\CustomPages\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Account\Web.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="App_Data\rpsDB" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="Properties\Web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+    <Content Include="Properties\Web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+    <Content Include="web.config" />
+    <Content Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+    <Content Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_LocalResources\Main.aspx.resx">
