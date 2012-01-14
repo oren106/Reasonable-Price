@@ -1,12 +1,5 @@
 ﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Data;
-using System.Text;
 using System.Data.SQLite;
-using NUnit.Framework;
 
 
 /// <summary>
@@ -14,7 +7,7 @@ using NUnit.Framework;
 /// </summary>
 public partial class prodInfo
 {
-    private string DBPath = @"data source=c:/app_data/rpsDB";
+    private string DBPath = @"data source=c:\rps\rps\app_data\rpsDB";
 
 
     private string prod_name;

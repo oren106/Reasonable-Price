@@ -28,3 +28,15 @@ C:\rps5\bin\nunit.framework.dll
 C:\rps5\bin\nunit.framework.xml
 C:\rps5\obj\Release\rps.dll
 C:\rps5\obj\Release\rps.pdb
+C:\rps\RPS\bin\rps.dll
+C:\rps\RPS\bin\rps.pdb
+C:\rps\RPS\bin\nunit.framework.dll
+C:\rps\RPS\bin\nunit.framework.xml
+C:\rps\RPS\obj\Release\ResolveAssemblyReference.cache
+C:\rps\RPS\obj\Release\rps.Properties.Resources.resources
+C:\rps\RPS\obj\Release\GenerateResource.read.1.tlog
+C:\rps\RPS\obj\Release\GenerateResource.write.1.tlog
+C:\rps\RPS\obj\Release\rps.dll
+C:\rps\RPS\obj\Release\rps.pdb
+C:\rps\RPS\bin\App_Data\System.Data.SQLite.dll
+C:\rps\RPS\bin\System.Data.SQLite.dll

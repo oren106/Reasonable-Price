@@ -75,8 +75,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Content Include="App_Data\System.Data.SQLite.dll" />
     <Content Include="Answer.aspx" />
+    <Content Include="App_Data\System.Data.SQLite.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Properties\Global.asax" />
     <Content Include="images\arrow1.jpg" />
     <Content Include="images\arrow2.jpg" />
