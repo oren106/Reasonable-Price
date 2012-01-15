@@ -1,4 +1,4 @@
-﻿//The code for the answer  page
+﻿//Authors Sephora Ben-Israel, Erez Najar
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,17 +6,24 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-
+/// <summary>
+/// The code of the answer page
+/// </summary>
 public partial class _Default : System.Web.UI.Page
 {
-    // what to do when the page loads
+    /// <summary>
+    /// When the pages loads to show the rlevent picture depndent on the answer
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
         int num;
         string text = Request.QueryString.ToString();
         answer.Text = text;
         num = Convert.ToInt32(text);
-        num = Math.Abs(num);
+        answer.Text = num.ToString();
+        //num = Math.Abs(num);
         switch (num)
         {
             case 1:
@@ -47,5 +54,15 @@ public partial class _Default : System.Web.UI.Page
                 Image1.ImageUrl = "images/arrow8.jpg";
                 break;
         }
+    }
+
+    /// <summary>
+    /// Redricts the user to the main page when the back button is pressed
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Main.aspx");
     }
 }

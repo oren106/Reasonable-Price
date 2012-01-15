@@ -71,7 +71,6 @@
     </Compile>
     <Compile Include="Old_App_Code\DBM.cs" />
     <Compile Include="Old_App_Code\DBMInterface.cs" />
-    <Compile Include="Old_App_Code\ProdInterface.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

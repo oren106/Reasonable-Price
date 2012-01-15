@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="main" CodeBehind="Main.aspx.cs" %>
+﻿<!--Authors Sephora Ben-Israel, Erez Najar-->
+<%@ Page Language="C#" AutoEventWireup="true" Inherits="main" CodeBehind="Main.aspx.cs" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -9,6 +10,15 @@
     <form id="form1" runat="server">
     <script language="javascript" type="text/javascript">
 
+       
+        function resetAll() {
+            document.getElementById("<%=TextPrice.ClientID %>").value = " ";
+            document.getElementById("<%=TextAmount.ClientID %>").value = " ";
+            document.getElementById("<%=TextPlace.ClientID %>").value = " ";
+            document.getElementById("<%=TextCity.ClientID %>").value = " ";
+            document.getElementById("<%=TextName.ClientID %>").value = " ";
+            return false;
+        }
         function vald() {
             var reg = new RegExp("^[0-9]+$");
             var check = true;
@@ -35,30 +45,36 @@
         <h3>
             Reasonable Price System</h3>
         <br />
-        <asp:TextBox ID="TextName" runat="server" Text="Product"></asp:TextBox>
+       
+       <abbr title = "Product name"><asp:TextBox ID="TextName" runat="server"></asp:TextBox></abbr>
         &nbsp;&nbsp;
-        <asp:TextBox ID="TextPrice" runat="server" Text="Price"></asp:TextBox>
-        <asp:DropDownList ID="DropDownCurrncy" runat="server">
+        <abbr title ="Product price"><asp:TextBox ID="TextPrice" runat="server"></asp:TextBox></abbr>
+      <abbr title ="Your local currency"><asp:DropDownList ID="DropDownCurrncy" runat="server">
             <asp:ListItem Value="1" Text="שח" Selected="True" />
             <asp:ListItem Value="2" Text="Dollar $" />
             <asp:ListItem Value="-1" Text="none" />
-        </asp:DropDownList>
+        </asp:DropDownList></abbr>
         <br />
         <br />
         <br />
-        <asp:TextBox ID="TextAmount" runat="server" Text="Amount"></asp:TextBox>
-        &nbsp;&nbsp;<asp:DropDownList ID="DropDownMessurment" runat="server">
+        <abbr title ="The amount you are buying"><asp:TextBox ID="TextAmount"  runat="server"></asp:TextBox></abbr>
+        &nbsp;&nbsp;
+        <abbr title = "The measurment used (liter,mililiter,kg,gr,non)"><asp:DropDownList ID="DropDownMessurment" runat="server">
             <asp:ListItem Value="1" Text="Kg" />
             <asp:ListItem Value="2" Text="gr" />
             <asp:ListItem Value="3" Text="Liter" />
             <asp:ListItem Value="4" Text="miliLiter" />
             <asp:ListItem Value="-1" Text="none" Selected="True" />
-        </asp:DropDownList>
+        </asp:DropDownList></abbr>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextPlace" runat="server" Text="Place"></asp:TextBox>
-        &nbsp;<asp:TextBox ID="TextCity" runat="server" Text="City"></asp:TextBox>
+        <abbr title ="The place you are buying (supermarket,petrolstation,kiosk, etc)"><asp:TextBox ID="TextPlace" runat="server"></asp:TextBox></abbr>
+        &nbsp;
+        <abbr title ="The city you are buying"><asp:TextBox ID="TextCity" runat="server"></asp:TextBox></abbr>
         <br />
         <br />
+      
+&nbsp;&nbsp;<asp:Button ID="Button1" runat="server" CausesValidation = "false" Text="Reset" OnClientClick="return resetAll();" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="send" runat="server" Text="Send" OnClientClick="return vald();" OnClick="send_Click" />
         <br />
         <br />

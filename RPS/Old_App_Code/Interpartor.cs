@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Authors Oren adler, Yossi Eden
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,32 +7,43 @@ using System.Text.RegularExpressions;
 using System.Web.UI.WebControls;
 using System.Data.SQLite;
 
-/// <summary>
-/// Summary description for Interpartor
-/// </summary>
+
 namespace rps.Old_App_Code
 {
+    /// <summary>
+    /// The class which is in charge of doing the calculation and interperting the user input
+    /// </summary>
     public class Interpartor
     {
-        //The interpartor recives the input from the user and split the string and then 
-        //sends the plit string to the class inchsrge of retrivig the data from the data base.
         private prodInfo product;
         private DBMInterface dbm;
+        /// <summary>
+        /// The data base path
+        /// </summary>
         private string DBPath = @"data source=C:\rps\rpsDB";
+        /// <summary>
+        /// The coulmn names in the database in the order they are placed in the database
+        /// </summary>
         private string clm = "name,place,city,price,amount,currency,messurmant,timeSpan";
 
-
+        /// <summary>
+        /// Then interperter constructor
+        /// </summary>
+        /// <param name="prod">The product the user entered</param>
         public Interpartor(prodInfo prod)
         {
             product = new prodInfo(prod);
             dbm = new DBM(DBPath);
         }
 
-        //will return the answer 
+        /// <summary>
+        /// Calculates if the products price is reasonable 
+        /// </summary>
+        /// <returns>int with the  calculated number</returns>
         public int getAns()
         {
             SQLiteDataReader rd;
-            double crt, sumPrice = 0, sumAmount = 0, dstnce = 0, avg = 0, x, numOfRows = 0;
+            double crt, sumPrice = 0, sumAmount = 0, dstnce = 0, avg = 0, x;
             dbm.save(product.sqlToString(), "raw", clm);
             rd = (SQLiteDataReader) dbm.retriveData(product.get_name(), "raw");
             crt = (product.get_price() * product.get_currency()) / (product.get_amount() * forCalc(product.get_messurment()));
