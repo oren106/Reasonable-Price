@@ -37,7 +37,6 @@ public partial class main : System.Web.UI.Page
         int timeSpan = GetTimeSpan(start);
         product = new prodInfo(TextName.Text, TextPlace.Text, TextCity.Text, Convert.ToInt32(TextPrice.Text), Convert.ToInt16(DropDownCurrncy.SelectedValue), Convert.ToInt16(DropDownMessurment.SelectedValue), Convert.ToInt32(TextAmount.Text), timeSpan);
         inter = new Interpartor(product);
-        Response.Redirect("Answer.aspx?" + inter.getAns());
         Response.Redirect("Answer.aspx?num=" + inter.getAns() + "&text=" + inter.noraml());
     }
 

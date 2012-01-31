@@ -73,9 +73,9 @@
         <br />
         <br />
       
-&nbsp;&nbsp;<asp:Button ID="Button1" runat="server" CausesValidation = "false" Text="Reset" OnClientClick="return resetAll();" />
+&nbsp;&nbsp;<asp:Button ID="send" runat="server" Text="Send" OnClientClick="return vald();" OnClick="send_Click" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="send" runat="server" Text="Send" OnClientClick="return vald();" OnClick="send_Click" />
+        <asp:Button ID="Button1" runat="server" CausesValidation = "false" Text="Reset" OnClientClick="return resetAll();" />        
         <br />
         <br />
     </div>
