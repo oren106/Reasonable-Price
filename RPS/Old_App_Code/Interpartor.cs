@@ -20,7 +20,7 @@ namespace rps.Old_App_Code
         /// <summary>
         /// The data base path
         /// </summary>
-        private string DBPath = @"data source=C:\rps\rpsDB";
+        private string DBPath = @"data source=C:\rps\rps\rpsDB";
         /// <summary>
         /// The coulmn names in the database in the order they are placed in the database
         /// </summary>
