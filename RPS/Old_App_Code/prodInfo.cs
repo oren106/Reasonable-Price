@@ -12,9 +12,9 @@ using NUnit.Framework;
 
 namespace rps.Old_App_Code
 {
-   /// <summary>
-   /// The class that describes a product
-   /// </summary>
+    /// <summary>
+    /// The class that describes a product
+    /// </summary>
     public class prodInfo
     {
         private string prod_name;
@@ -142,7 +142,7 @@ namespace rps.Old_App_Code
         public string sqlToString()
         {
             string text;
-            text = "'"+ get_name() +"'" + ","+ "'" + get_place() + "'" + "," + "'" + get_city() + "'" + "," + "'" + get_price() + "'" + "," + "'" + get_amount() + "'" +
+            text = "'" + get_name() + "'" + "," + "'" + get_place() + "'" + "," + "'" + get_city() + "'" + "," + "'" + get_price() + "'" + "," + "'" + get_amount() + "'" +
                    "," + "'" + get_currency() + "'" + "," + "'" + get_messurment() + "'" + "," + "'" + timeSpan + "'";
             return text;
         }

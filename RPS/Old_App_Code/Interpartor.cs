@@ -114,7 +114,51 @@ namespace rps.Old_App_Code
                 default: return 1;
             }
         }
-
+        private string translate_currency()
+        {
+            switch (product.get_currency())
+            {
+                case 1: return "shekel";
+                case 2: return "dollar";
+                default: return null;
+            }
+        }
+        private string translate_messurment()
+        {
+            switch (product.get_messurment())
+            {
+                case 1: return "Kg";
+                case 2: return "gr";
+                case 3: return "Liter";
+                case 4: return "mililiter";
+                default: return null;
+            }
+        }
+        public string noraml()
+        {
+            string text;
+            if (product.get_messurment() == 3 || product.get_messurment() == 4)
+                text = "1 liter = ";
+            else if (product.get_messurment() == 1 || product.get_messurment() == 2)
+                text = "1 Kg = ";
+            else
+                text = "1 Unit = ";
+            text = text + String.Format("{0:0.##}", kCalc())+" " + translate_currency();
+            return text;
+        }
+        public double kCalc()
+        {
+            double d = ((double)product.get_price() * (double)product.get_currency()) / ((double)product.get_amount() * (double)forCalc(product.get_messurment()));
+            int i = product.get_messurment();
+            switch (i)
+            {
+                case 1: return d;
+                case 2: return 1000 * d;
+                case 3: return d;
+                case 4: return 1000 * d;
+                default: return d;
+            }
+        }
             
     }
 

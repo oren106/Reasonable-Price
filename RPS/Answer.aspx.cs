@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 /// <summary>
 /// The code of the answer page
 /// </summary>
-public partial class _Default : System.Web.UI.Page
+public partial class Answer : System.Web.UI.Page
 {
     /// <summary>
     /// When the pages loads to show the rlevent picture depndent on the answer
@@ -20,10 +20,8 @@ public partial class _Default : System.Web.UI.Page
     {
         int num;
         string text = Request.QueryString.ToString();
-        answer.Text = text;
-        num = Convert.ToInt32(text);
-        answer.Text = num.ToString();
-        //num = Math.Abs(num);
+        answer.Text = Request.QueryString["text"];
+        num = Convert.ToInt32(Request.QueryString["num"]);
         switch (num)
         {
             case 1:

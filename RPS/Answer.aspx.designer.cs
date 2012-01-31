@@ -9,7 +9,7 @@
 
 
 
-public partial class _Default {
+public partial class Answer {
     
     /// <summary>
     /// form1 control.
