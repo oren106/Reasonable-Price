@@ -45,7 +45,7 @@ namespace rps.Old_App_Code
             SQLiteDataReader rd;
             double crt, sumPrice = 0, sumAmount = 0, dstnce = 0, avg = 0, x;
             dbm.save(product.sqlToString(), "raw", clm);
-            rd = (SQLiteDataReader) dbm.retriveData(product.get_name(), "raw");
+            rd = (SQLiteDataReader)dbm.retriveData(product.get_name(), "raw");
             crt = (product.get_price() * product.get_currency()) / (product.get_amount() * forCalc(product.get_messurment()));
             try
             {
@@ -105,7 +105,7 @@ namespace rps.Old_App_Code
         }
         private int forCalc(int i)
         {
-               switch (i)
+            switch (i)
             {
                 case 1: return 1000;
                 case 2: return 1;
@@ -143,7 +143,7 @@ namespace rps.Old_App_Code
                 text = "1 Kg = ";
             else
                 text = "1 Unit = ";
-            text = text + String.Format("{0:0.##}", kCalc())+" " + translate_currency();
+            text = text + String.Format("{0:0.##}", kCalc()) + " " + translate_currency();
             return text;
         }
         public double kCalc()
@@ -159,10 +159,5 @@ namespace rps.Old_App_Code
                 default: return d;
             }
         }
-            
     }
-
-
-
-
-    }
+}

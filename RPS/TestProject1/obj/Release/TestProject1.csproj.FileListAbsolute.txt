@@ -1,0 +1,10 @@
+C:\rps\RPS\TestProject1\bin\Release\TestProject1.dll
+C:\rps\RPS\TestProject1\bin\Release\TestProject1.pdb
+C:\rps\RPS\TestProject1\bin\Release\nunit.framework.dll
+C:\rps\RPS\TestProject1\bin\Release\rps.dll
+C:\rps\RPS\TestProject1\bin\Release\System.Data.SQLite.dll
+C:\rps\RPS\TestProject1\bin\Release\rps.pdb
+C:\rps\RPS\TestProject1\bin\Release\nunit.framework.xml
+C:\rps\RPS\TestProject1\obj\Release\ResolveAssemblyReference.cache
+C:\rps\RPS\TestProject1\obj\Release\TestProject1.dll
+C:\rps\RPS\TestProject1\obj\Release\TestProject1.pdb
