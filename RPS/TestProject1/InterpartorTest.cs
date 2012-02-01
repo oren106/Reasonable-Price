@@ -79,7 +79,7 @@ namespace TestProject1
         {
             prodInfo prod = new prodInfo("tea", "super", "", 10, 1, 4, 4, 0);  // TODO: Initialize to an appropriate value
             Interpartor target = new Interpartor(prod); // TODO: Initialize to an appropriate value
-            double expected = 2500; // TODO: Initialize to an appropriate value
+            double expected = 250; // TODO: Initialize to an appropriate value
             double actual;
             actual = target.kCalc();
             Assert.AreEqual(expected, actual);
